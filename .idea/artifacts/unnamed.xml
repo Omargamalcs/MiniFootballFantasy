@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="unnamed">
+    <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
+    <root id="root">
+      <element id="library" level="project" name="sqlite-jdbc-3.20.1" />
+      <element id="archive" name="archive.jar" />
+      <element id="archive" name="MFFProject.jar">
+        <element id="module-output" name="MFFProject" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

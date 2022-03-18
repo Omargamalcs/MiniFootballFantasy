@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="1080" maxWidth="607.5" minHeight="1080" minWidth="607.5" prefHeight="607.5" prefWidth="1080.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="sample.Controller">
+   <children>
+
+       <Pane fx:id="signUp" prefHeight="607.5" prefWidth="1080.0">
+           <children>
+               <ImageView fitHeight="607.5" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@Sign up.png" />
+                   </image>
+               </ImageView>
+               <Button layoutX="751.0" layoutY="502.0" mnemonicParsing="false" onAction="#addToDB" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: none;" text="Sign Up" textAlignment="CENTER" textFill="#8c0865">
+                   <font>
+                       <Font name="System Bold" size="17.0" />
+                   </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+               </Button>
+               <Button layoutX="190.0" layoutY="503.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="50.0" prefWidth="148.0" style="-fx-background-color: none;" text="Sign In" textAlignment="CENTER" textFill="WHITE">
+                   <font>
+                       <Font name="System Bold" size="19.0" />
+                   </font>
+                   <cursor>
+                       <Cursor fx:constant="CLOSED_HAND" />
+                   </cursor>
+               </Button>
+               <TextField fx:id="txt_name" layoutX="679.0" layoutY="144.0" prefHeight="38.0" prefWidth="319.0" promptText="Enter your name...">
+                   <font>
+                       <Font size="16.0" />
+                   </font>
+               </TextField>
+               <TextField fx:id="txt_email_Sign_Up" layoutX="679.0" layoutY="229.0" prefHeight="38.0" prefWidth="319.0" promptText="Enter your email...">
+                   <font>
+                       <Font size="16.0" />
+                   </font>
+               </TextField>
+               <PasswordField fx:id="txt_password_Sign_Up" layoutX="679.0" layoutY="313.0" prefHeight="38.0" prefWidth="319.0" promptText="Enter your password...">
+                   <font>
+                       <Font size="16.0" />
+                   </font>
+               </PasswordField>
+               <PasswordField fx:id="txt_confirm_password" layoutX="679.0" layoutY="408.0" prefHeight="38.0" prefWidth="319.0" promptText="Confirm password...">
+                   <font>
+                       <Font size="16.0" />
+                   </font>
+               </PasswordField>
+           </children>
+       </Pane>
+
+         <Pane fx:id="signIn" prefHeight="607.5" prefWidth="1080.0" visible="false">
+             <children>
+                 <ImageView fitHeight="607.5" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                         <Image url="@Sign in.png" />
+                     </image>
+                 </ImageView>
+
+                 <TextField fx:id="txt_email_Sign_In" layoutX="703.5" layoutY="232.5" prefHeight="45.0" prefWidth="300.0" promptText="Enter your email..." style="-fx-background-color: white;">
+                     <font>
+                         <Font size="16.0" />
+                     </font>
+            </TextField>
+                 <PasswordField fx:id="txt_password_Sign_In" layoutX="706.0" layoutY="320.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter your password..." style="-fx-background-color: white;">
+                     <font>
+                         <Font size="16.0" />
+                     </font>
+                 </PasswordField>
+                 <Button layoutX="742.0" layoutY="403.0" mnemonicParsing="false" onAction="#SignInValidator" prefHeight="50.0" prefWidth="98.0" style="-fx-background-color: none;" text="Sign In" textFill="#8c0865">
+                     <font>
+                         <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                         <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                 </Button>
+                 <Button layoutX="245.0" layoutY="507.0" mnemonicParsing="false" onAction="#toSignUp" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: none;" text="Sign Up" textFill="WHITE">
+                     <font>
+                         <Font name="System Bold" size="20.0" />
+                     </font>
+                     <cursor>
+                         <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                 </Button>
+             </children>
+         </Pane>
+
+
+       <Pane fx:id="home" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <ImageView fitHeight="607.0" fitWidth="1080.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@Home.png" />
+                   </image>
+               </ImageView>
+
+               <Button layoutX="914.0" layoutY="21.0" mnemonicParsing="false" onAction="#logOut" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: none;" text="" textFill="WHITE">
+                   <font>
+                       <Font name="System Bold" size="30.0" />
+                   </font>
+                   <cursor>
+                       <Cursor fx:constant="CLOSED_HAND" />
+                   </cursor>
+               </Button>
+            <Button fx:id="yourPlan" layoutX="27.0" layoutY="215.0" mnemonicParsing="false" onAction="#toTeam" prefHeight="179.0" prefWidth="292.0" style="-fx-background-color: none;" />
+            <Button fx:id="top3Players" layoutX="394.0" layoutY="215.0" mnemonicParsing="false" onAction="#toTopThree" prefHeight="179.0" prefWidth="292.0" style="-fx-background-color: none;" />
+            <Button fx:id="topPlayer" layoutX="758.0" layoutY="214.0" mnemonicParsing="false" onAction="#toTopPlayer" prefHeight="179.0" prefWidth="292.0" style="-fx-background-color: none;" />
+           </children>
+       </Pane>
+
+       <Pane fx:id="formation" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+           <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                   <Image url="@Choose the formation.png" />
+               </image>
+           </ImageView>
+           <Button fx:id="b433" layoutX="146.0" layoutY="174.0" mnemonicParsing="false" onAction="#toFormation" prefHeight="71.0" prefWidth="195.0" style="-fx-background-color: none;" text="4-3-3" textFill="WHITE">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                   <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+           </Button>
+           <Button fx:id="b442" layoutX="442.0" layoutY="174.0" mnemonicParsing="false" onAction="#toFormation" prefHeight="71.0" prefWidth="195.0" style="-fx-background-color: none;" text="4-4-2" textFill="WHITE">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                   <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+           </Button>
+           <Button fx:id="b451" layoutX="733.0" layoutY="173.0" mnemonicParsing="false" onAction="#toFormation" prefHeight="71.0" prefWidth="201.0" style="-fx-background-color: none;" text="4-5-1" textFill="WHITE">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                   <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+           </Button>
+           <Button fx:id="b541" layoutX="146.0" layoutY="292.0" mnemonicParsing="false" onAction="#toFormation" prefHeight="71.0" prefWidth="195.0" style="-fx-background-color: none;" text="5-4-1" textFill="WHITE">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                   <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+           </Button>
+           <Button fx:id="b532" layoutX="437.0" layoutY="291.0" mnemonicParsing="false" onAction="#toFormation" prefHeight="71.0" prefWidth="201.0" style="-fx-background-color: none;" text="5-3-2" textFill="WHITE">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+
+               </font>
+               <cursor>
+                   <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+           </Button>
+           <Button fx:id="b523" layoutX="730.0" layoutY="291.0" mnemonicParsing="false" onAction="#toFormation" prefHeight="71.0" prefWidth="201.0" style="-fx-background-color: none;" text="5-2-3" textFill="WHITE">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                   <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+           </Button>
+           <Button fx:id="b343" layoutX="294.0" layoutY="432.0" mnemonicParsing="false" onAction="#toFormation" prefHeight="71.0" prefWidth="195.0" style="-fx-background-color: none;" text="3-4-3" textFill="WHITE">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                   <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+           </Button>
+           <Button fx:id="b352" layoutX="586.0" layoutY="433.0" mnemonicParsing="false" onAction="#toFormation" prefHeight="71.0" prefWidth="201.0" style="-fx-background-color: none;" text="3-5-2" textFill="WHITE">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                   <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+           </Button>
+
+             </children>
+       </Pane>
+
+
+       <Pane fx:id="f433" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@4-3-3.png" />
+                   </image>
+               </ImageView>
+               <Button layoutX="822.0" layoutY="23.0" mnemonicParsing="false" onAction="#toHome" prefHeight="50.0" prefWidth="73.0" style="-fx-cursor: hand; -fx-background-color: none;" textFill="WHITE">
+                   <font>
+                       <Font name="System Bold" size="25.0" />
+                   </font>
+                   <cursor>
+                       <Cursor fx:constant="CLOSED_HAND" />
+                   </cursor>
+               </Button>
+               <Button layoutX="920.0" layoutY="24.0" mnemonicParsing="false" onAction="#loggingOut" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: none; -fx-cursor: hand;" textFill="WHITE">
+                   <font>
+                       <Font name="System Bold" size="25.0" />
+                   </font>
+                   <cursor>
+                       <Cursor fx:constant="CLOSED_HAND" />
+                   </cursor>
+               </Button>
+               <Button layoutX="197.0" layoutY="164.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="332.0" layoutY="151.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="95.0" layoutY="383.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="386.0" layoutY="271.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="511.0" layoutY="107.0" mnemonicParsing="false" onAction="#toGoalKeeper" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="513.0" layoutY="350.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="639.0" layoutY="274.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="700.0" layoutY="150.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="510.0" layoutY="466.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="839.0" layoutY="176.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+               <Button layoutX="902.0" layoutY="399.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+           </children>
+       </Pane>
+
+       <Pane fx:id="f442" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <Pane prefHeight="607.0" prefWidth="1080.0">
+                   <children>
+                       <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@4-4-2.png" />
+                           </image>
+                       </ImageView>
+                       <Button layoutX="197.0" layoutY="164.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="336.0" layoutY="141.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="512.0" layoutY="112.0" mnemonicParsing="false" onAction="#toGoalKeeper" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="386.0" layoutY="271.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="172.0" layoutY="308.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="387.0" layoutY="424.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="639.0" layoutY="274.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="690.0" layoutY="151.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="59.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="644.0" layoutY="430.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="839.0" layoutY="176.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="861.0" layoutY="317.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="816.0" layoutY="37.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: none;" />
+                       <Button layoutX="915.0" layoutY="38.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: none;" />
+                   </children>
+               </Pane>
+           </children>
+       </Pane>
+
+       <Pane fx:id="f451" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@4-5-1.png" />
+                   </image>
+               </ImageView>
+               <Button layoutX="198.0" layoutY="167.0" minWidth="22.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="86.0" prefWidth="52.0" style="-fx-background-color: none;" />
+               <Button layoutX="334.0" layoutY="136.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="86.0" prefWidth="45.0" style="-fx-background-color: none;" />
+               <Button layoutX="514.0" layoutY="100.0" mnemonicParsing="false" onAction="#toGoalKeeper" prefHeight="86.0" prefWidth="52.0" style="-fx-background-color: none;" />
+               <Button layoutX="116.0" layoutY="312.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="94.0" prefWidth="43.0" style="-fx-background-color: none;" />
+               <Button layoutX="389.0" layoutY="258.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="86.0" prefWidth="43.0" style="-fx-background-color: none;" />
+               <Button layoutX="517.0" layoutY="340.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="79.0" prefWidth="45.0" style="-fx-background-color: none;" />
+               <Button layoutX="639.0" layoutY="262.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="86.0" prefWidth="45.0" style="-fx-background-color: none;" />
+               <Button layoutX="514.0" layoutY="449.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="86.0" prefWidth="45.0" style="-fx-background-color: none;" />
+               <Button layoutX="700.0" layoutY="140.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="86.0" prefWidth="45.0" style="-fx-background-color: none;" />
+               <Button layoutX="839.0" layoutY="165.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="79.0" prefWidth="53.0" style="-fx-background-color: none;" />
+               <Button layoutX="906.0" layoutY="314.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="94.0" prefWidth="45.0" style="-fx-background-color: none;" />
+               <Button layoutX="822.0" layoutY="33.0" mnemonicParsing="false" onAction="#toHome" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: none;" />
+               <Button layoutX="910.0" layoutY="33.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="40.0" prefWidth="109.0" style="-fx-background-color: none;" />
+           </children>
+       </Pane>
+       <Pane fx:id="f541" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <Pane prefHeight="607.0" prefWidth="1080.0">
+                   <children>
+                       <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@5-4-1.png" />
+                           </image>
+                       </ImageView>
+                       <Button layoutX="198.0" layoutY="202.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="330.0" layoutY="193.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="512.0" layoutY="112.0" mnemonicParsing="false" onAction="#toGoalKeeper" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="387.0" layoutY="332.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="107.0" layoutY="335.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="513.0" layoutY="465.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="635.0" layoutY="335.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="695.0" layoutY="185.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="59.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="908.0" layoutY="326.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="839.0" layoutY="191.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="697.0" layoutY="190.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="816.0" layoutY="37.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: none;" />
+                       <Button layoutX="915.0" layoutY="38.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: none;" />
+                       <Button layoutX="512.0" layoutY="221.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                   </children>
+               </Pane>
+           </children>
+       </Pane>
+
+             <Pane fx:id="f523" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <Pane prefHeight="607.0" prefWidth="1080.0">
+                   <children>
+                       <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@5-2-3.png" />
+                           </image>
+                       </ImageView>
+                       <Button layoutX="198.0" layoutY="202.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="327.0" layoutY="195.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="512.0" layoutY="112.0" mnemonicParsing="false" onAction="#toGoalKeeper" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="387.0" layoutY="332.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="112.0" layoutY="434.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="513.0" layoutY="465.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="641.0" layoutY="323.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="86.0" prefWidth="43.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="695.0" layoutY="185.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="59.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="902.0" layoutY="437.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="839.0" layoutY="191.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="701.0" layoutY="191.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="816.0" layoutY="37.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: none;" />
+                       <Button layoutX="915.0" layoutY="38.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: none;" />
+                       <Button layoutX="513.0" layoutY="212.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                   </children>
+               </Pane>
+           </children>
+       </Pane>
+
+       <Pane fx:id="f532" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <Pane prefHeight="607.0" prefWidth="1080.0">
+                   <children>
+                       <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@5-3-2.png" />
+                           </image>
+                       </ImageView>
+                       <Button layoutX="198.0" layoutY="202.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="327.0" layoutY="195.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="512.0" layoutY="112.0" mnemonicParsing="false" onAction="#toGoalKeeper" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="385.0" layoutY="450.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="114.0" layoutY="332.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="512.0" layoutY="332.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="637.0" layoutY="450.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="695.0" layoutY="185.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="59.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="903.0" layoutY="332.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="839.0" layoutY="191.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="701.0" layoutY="191.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="816.0" layoutY="37.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: none;" />
+                       <Button layoutX="915.0" layoutY="38.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: none;" />
+                       <Button layoutX="513.0" layoutY="212.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                   </children>
+               </Pane>
+           </children>
+       </Pane>
+
+       <Pane fx:id="f343" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <Pane prefHeight="607.0" prefWidth="1080.0">
+                   <children>
+                       <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@3-4-3.png" />
+                           </image>
+                       </ImageView>
+                       <Button layoutX="329.0" layoutY="193.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="191.0" layoutY="309.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="512.0" layoutY="112.0" mnemonicParsing="false" onAction="#toGoalKeeper" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="387.0" layoutY="332.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="112.0" layoutY="434.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="513.0" layoutY="465.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="636.0" layoutY="338.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="695.0" layoutY="185.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="59.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="902.0" layoutY="437.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="835.0" layoutY="318.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="701.0" layoutY="191.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                       <Button layoutX="816.0" layoutY="37.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: none;" />
+                       <Button layoutX="915.0" layoutY="38.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: none;" />
+                       <Button layoutX="513.0" layoutY="212.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="69.0" prefWidth="52.0" style="-fx-background-color: none;" text=" " />
+                   </children>
+               </Pane>
+           </children>
+       </Pane>
+
+       <Pane fx:id="f352" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@3-5-2.png" />
+                   </image>
+               </ImageView>
+               <Button layoutX="328.0" layoutY="184.0" minWidth="53.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="86.0" prefWidth="53.0" style="-fx-background-color: none;" />
+               <Button layoutX="513.0" layoutY="218.0" minWidth="53.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="79.0" prefWidth="53.0" style="-fx-background-color: none;" />
+               <Button layoutX="294.0" layoutY="304.0" minWidth="53.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="70.0" prefWidth="53.0" style="-fx-background-color: none;" />
+               <Button layoutX="115.0" layoutY="329.0" minWidth="53.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="70.0" prefWidth="53.0" style="-fx-background-color: none;" />
+               <Button layoutX="516.0" layoutY="103.0" minWidth="53.0" mnemonicParsing="false" onAction="#toGoalKeeper" prefHeight="79.0" prefWidth="53.0" style="-fx-background-color: none;" />
+               <Button layoutX="383.0" layoutY="439.0" minWidth="53.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="79.0" prefWidth="53.0" style="-fx-background-color: none;" />
+               <Button layoutX="509.0" layoutY="320.0" minWidth="53.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="86.0" prefWidth="60.0" style="-fx-background-color: none;" />
+               <Button layoutX="636.0" layoutY="442.0" minWidth="53.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="79.0" prefWidth="60.0" style="-fx-background-color: none;" />
+               <Button layoutX="698.0" layoutY="198.0" minWidth="53.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="70.0" prefWidth="53.0" style="-fx-background-color: none;" />
+               <Button layoutX="734.0" layoutY="307.0" minWidth="43.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="79.0" prefWidth="43.0" style="-fx-background-color: none;" />
+               <Button layoutX="906.0" layoutY="320.0" minWidth="45.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="79.0" prefWidth="45.0" style="-fx-background-color: none;" />
+               <Button layoutX="821.0" layoutY="41.0" mnemonicParsing="false" onAction="#toHome" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: none;" />
+               <Button layoutX="917.0" layoutY="41.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: none;" />
+           </children>
+       </Pane>
+      <Pane fx:id="selectGoalkeeper" prefHeight="607.0" prefWidth="1080.0" visible="false">
+         <children>
+            <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Select Goalkeeper.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="CfmBtn" layoutX="812.0" layoutY="112.0" mnemonicParsing="false" onAction="#submitGoalkeeper" prefHeight="46.0" prefWidth="95.0" style="-fx-background-color: none;" />
+            <Button layoutX="941.0" layoutY="123.0" mnemonicParsing="false" onAction="#toGoalKeeper" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: none;" />
+            <TableView fx:id="GoalkeeperTable" layoutX="33.0" layoutY="158.0" prefHeight="415.0" prefWidth="1014.0">
+              <columns>
+                <TableColumn fx:id="playerNameInGoalkeepr" prefWidth="682.3999786376953" text="Player name" />
+                  <TableColumn fx:id="TeamNameInGoalkeepers" prefWidth="237.60006713867188" text="Team name" />
+                <TableColumn fx:id="ButtonInGoalkeeper" minWidth="0.0" prefWidth="94.4000244140625" text="Check" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="selectDefender" prefHeight="607.0" prefWidth="1080.0" visible="false">
+         <children>
+            <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Select defenders.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="812.0" layoutY="112.0" mnemonicParsing="false" onAction="#submitDefender" prefHeight="46.0" prefWidth="95.0" style="-fx-background-color: none;" />
+            <Button layoutX="941.0" layoutY="123.0" mnemonicParsing="false" onAction="#toDefender" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: none;" />
+            <TableView fx:id="DefenderTable" layoutX="33.0" layoutY="158.0" prefHeight="415.0" prefWidth="1014.0">
+               <columns>
+                  <TableColumn fx:id="playerNameInDefender" prefWidth="682.3999786376953" text="Player name" />
+                  <TableColumn fx:id="TeamNameInDefenders" prefWidth="237.60006713867188" text="Team name" />
+                  <TableColumn fx:id="ButtonInDefender" minWidth="0.0" prefWidth="94.4000244140625" text="Check" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="selectMidfielders" prefHeight="607.0" prefWidth="1080.0" visible="false">
+         <children>
+            <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Select midfielders.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="812.0" layoutY="112.0" mnemonicParsing="false" onAction="#submitMidfielder" prefHeight="46.0" prefWidth="95.0" style="-fx-background-color: none;" />
+            <Button layoutX="941.0" layoutY="123.0" mnemonicParsing="false" onAction="#toMidfielder" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: none;" />
+            <TableView fx:id="MidfielderTable" layoutX="33.0" layoutY="158.0" prefHeight="415.0" prefWidth="1014.0">
+               <columns>
+                  <TableColumn fx:id="playerNameInMidfielder" prefWidth="682.3999786376953" text="Player name" />
+                  <TableColumn fx:id="TeamNameInMidfielder" prefWidth="237.60006713867188" text="Team name" />
+                  <TableColumn fx:id="ButtonInMidfielder" minWidth="0.0" prefWidth="94.4000244140625" text="Check" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="selectStrikers" prefHeight="607.0" prefWidth="1080.0" visible="false">
+         <children>
+            <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Select strikers.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="812.0" layoutY="112.0" mnemonicParsing="false" onAction="#submitStriker" prefHeight="46.0" prefWidth="95.0" style="-fx-background-color: none;" />
+            <Button layoutX="941.0" layoutY="123.0" mnemonicParsing="false" onAction="#toStriker" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: none;" />
+            <TableView fx:id="StrikerTable" layoutX="33.0" layoutY="158.0" prefHeight="415.0" prefWidth="1014.0">
+               <columns>
+                  <TableColumn fx:id="playerNameInStriker" prefWidth="682.3999786376953" text="Player name" />
+                  <TableColumn fx:id="TeamNameInStriker" prefWidth="237.60006713867188" text="Team name" />
+                  <TableColumn fx:id="ButtonInStriker" minWidth="0.0" prefWidth="94.4000244140625" text="Check" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+
+       <Pane fx:id="yourTeam" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@YourTeam.png" />
+                   </image>
+               </ImageView>
+               <TableView fx:id="totalPointsTable" layoutX="33.0" layoutY="158.0" prefHeight="416.0" prefWidth="1016.0">
+                   <columns>
+                       <TableColumn fx:id="col_playerName" prefWidth="421.0" text="Player Name" />
+                       <TableColumn fx:id="col_playerTeam" prefWidth="486.0" text="Player Team" />
+                       <TableColumn fx:id="col_playerPerformance" prefWidth="108.0" text="Performance" />
+                   </columns>
+               </TableView>
+            <Button layoutX="821.0" layoutY="34.0" mnemonicParsing="false" onAction="#toHome" prefHeight="32.0" prefWidth="73.0" style="-fx-background-color: none;" />
+            <Button layoutX="921.0" layoutY="34.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="35.0" prefWidth="95.0" style="-fx-background-color: none;" />
+            <Label fx:id="totalPointsLabel" layoutX="596.0" layoutY="115.0" text="00" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="22.0" />
+               </font>
+            </Label>
+           </children>
+       </Pane>
+
+       <Pane fx:id="Admin" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@Admin.png" />
+                   </image>
+               </ImageView>
+               <TextField fx:id="Admin_TeamName" layoutX="203.0" layoutY="134.0" onMouseClicked="#textFieldisPressed" promptText="Enter team name..." />
+               <TextField fx:id="Admin_PlayerName" layoutX="203.0" layoutY="201.0" promptText="Enter player name..." />
+               <TextField fx:id="Admin_NumOfCS" layoutX="203.0" layoutY="311.0" promptText="Num of clean-sheets..." />
+               <TextField fx:id="Admin_NumOfGoals" layoutX="263.0" layoutY="377.0" promptText="Num of goals..." />
+               <TextField fx:id="Admin_NumOfAssists" layoutX="263.0" layoutY="445.0" promptText="Num of assists..." />
+               <Button layoutX="916.0" layoutY="24.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="50.0" prefWidth="98.0" style="-fx-background-color: none;" >
+                   <cursor>
+                       <Cursor fx:constant="CLOSED_HAND" />
+                   </cursor>
+               </Button>
+            <Button layoutX="893.0" layoutY="486.0" mnemonicParsing="false" onAction="#OnAdminConfirmation" prefHeight="71.0" prefWidth="139.0" style="-fx-background-color: none;">
+                <cursor>
+                    <Cursor fx:constant="CLOSED_HAND" />
+                </cursor>
+            </Button>
+
+
+            <Label fx:id="Admin_Dn" layoutX="439.0" layoutY="522.0" text="Done Successfully" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+           </children>
+       </Pane>
+
+       <Pane fx:id="Top3Users" prefHeight="607.0" prefWidth="1080.0" visible="false">
+           <children>
+               <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@Top3Users.png" />
+                   </image>
+               </ImageView>
+               <Button layoutX="813.0" layoutY="33.0" mnemonicParsing="false" onAction="#toTopThree" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: none;" />
+               <Button layoutX="923.0" layoutY="33.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: none;" />
+               <Label fx:id="TopUser1" alignment="CENTER" layoutX="464.0" layoutY="472.0" prefHeight="40.0" prefWidth="148.0" text="Label1" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font></Label>
+            <Label fx:id="TopUser3" alignment="CENTER" layoutX="783.0" layoutY="472.0" prefHeight="45.0" prefWidth="109.0" text="Label3" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="TopUser2" alignment="CENTER" layoutX="143.0" layoutY="475.0" prefHeight="40.0" prefWidth="148.0" text="Label2" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+           </children>
+       </Pane>
+
+       <Pane fx:id="TPT" prefHeight="607.0" prefWidth="1080.0" visible="false">
+       <children>
+           <ImageView fitHeight="607.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                   <Image url="@Top player in team.png" />
+               </image>
+           </ImageView>
+           <Button layoutX="813.0" layoutY="33.0" mnemonicParsing="false" onAction="#toTopPlayer" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: none;" />
+           <Button layoutX="923.0" layoutY="33.0" mnemonicParsing="false" onAction="#toSignIn" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: none;" />
+           <Label fx:id="TPT_Player" alignment="CENTER" layoutX="22.0" layoutY="269.0" prefHeight="70.0" prefWidth="292.0" text="Player" textFill="#eac117">
+               <font>
+                   <Font name="System Bold" size="33.0" />
+               </font>
+           </Label>
+            <Label fx:id="TPT_Team" alignment="CENTER" layoutX="57.0" layoutY="339.0" prefHeight="70.0" prefWidth="223.0" text="Team" textFill="#eac117">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+            <Label fx:id="TPT_Points" alignment="CENTER" layoutX="57.0" layoutY="409.0" prefHeight="70.0" prefWidth="223.0" text="Points" textFill="#eac117">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+       </children>
+       </Pane>
+   </children>
+</Pane>
